@@ -13,6 +13,7 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 import net.runelite.client.config.Keybind;
+import net.runelite.client.config.Notification;
 import net.runelite.client.config.Range;
 import net.runelite.client.config.Units;
 
@@ -339,6 +340,14 @@ public interface LootFiltersConfig extends Config {
     default LootbeamHeight lootbeamHeight() {
         return LootbeamHeight.NORMAL;
     }
+    @ConfigItem(
+        keyName = "customSystemNotification",
+        name = "Customized system notifications",
+        description = "Customize system notifications sent.",
+        section = displayOverrides,
+        position = 201
+    )
+    default Notification customSystemNotification() { return Notification.OFF; }
 
     @ConfigSection(
             name = "Global filters",
